@@ -14,16 +14,9 @@ class Person
 	public string Name { get; private set; }
 	public Pet Pet { get; private set; }
 
-	public Person(string name, Pet pet)
-	{
-		Name = name;
-		Pet = pet;
-	}
+	public Person(string name, Pet pet) => (Name, Pet) = (name, pet);
 
-	public void Present()
-	{
-		Console.WriteLine($"Hej jag heter {Name} och mitt husdjur heter {Pet.Name} och är en {Pet.Species}");
-	}
+	public void Present() => Console.WriteLine($"Hej jag heter {Name} och mitt husdjur heter {Pet.Name} och är en {Pet.Species}");
 }
 
 class Pet
@@ -31,9 +24,5 @@ class Pet
 	public string Name { get; private set; }
 	public string Species { get; private set; }
 
-	public Pet(string name, string species)
-	{
-		Name = name;
-		Species = species;
-	}
+	public Pet(string name, string species) => (Name, Species) = (name, species);
 }
